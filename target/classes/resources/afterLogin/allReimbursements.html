@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://bootswatch.com/5/quartz/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
+    <link rel="stylesheet" href="./reimbursementstyle.css" />
+</head>
+<body onload="onload()">
+    <div id="all">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#">Navbar</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02"
+                aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+      
+              <div class="collapse navbar-collapse" id="navbarColor02">
+                <ul class="navbar-nav me-auto">
+                  <li class="nav-item">
+                    <a class="nav-link" href="/afterLogin/reimbursements.html">Reimbursements</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/afterLogin/users.html">Users</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/afterLogin/admin.html">Admin</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+                      aria-expanded="false">Dropdown</a>
+                    <div class="dropdown-menu">
+                      <a class="dropdown-item" href="/afterLogin/reimbursements.html">Reimbursements</a>
+                      <a class="dropdown-item" href="/afterLogin/users.html">Users</a>
+                      <a class="dropdown-item" href="/afterLogin/allReimbursements.html">Admin</a>
+                      <a class="dropdown-item" href="/index.html">logout</a>
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="#">Separated link</a>
+                    </div>
+                  </li>
+                </ul>
+                <span class="d-flex">Welcome to All Access Reimbursement</span>
+              </div>
+            </div>
+          </nav>
+          
+
+          <div>
+            <div class="container-fluid">
+                <div class="row d-flex justify-content-center align-items-center">
+                    <div class="col card border-primary mb-3">
+                        <div class="d-flex flex-rowalign-items-center justify-content-center justify-content-lg-start">
+                          <form>
+                              <h1 class = "text-center">Welcome to the Admin page. Please choose an Id from below to view details</h1>
+                              <div class="form-group">
+                                  <label class="col-form-label mt-4" for="id">Reimbursement ID</label>
+                                  <input type="number" class="form-control" placeholder="ID code here" id="id">
+                              </div>
+                              <button type="button" id = "btn1" class="btn btn-primary">Populate Details</button>
+                              <button type="button" id = "btn2" class="btn btn-primary">Approve</button>
+                              <button type="button" id = "btn3" class="btn btn-primary">Deny</button>
+                          </form>
+    
+    
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </div>
+          <ul class="list-group">
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+              Reimbursement Id
+              <span id = "reimbId" class="badge bg-primary rounded-pill"></span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                Amount Requested
+                <span id = "amount" class="badge bg-primary rounded-pill"></span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                Time Request Made
+                <span id = "timeSubmitted" class="badge bg-primary rounded-pill"></span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                Time resolved
+                <span id = "timeResolved" class="badge bg-primary rounded-pill"></span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                Description
+                <span id = "description" class="badge bg-primary rounded-pill"></span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                Author ID code
+                <span id = "authorId" class="badge bg-primary rounded-pill"></span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                Resolver's Id Code
+                <span id = "resolverId" class="badge bg-primary rounded-pill"></span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                Status
+                <span id = "status" class="badge bg-primary rounded-pill"></span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                type of Request
+                <span id = "type" class="badge bg-primary rounded-pill"></span>
+            </li>
+          </ul>
+
+          <h1 class="text-center">Welcome. These are all the reimbursements</h1>
+          <div class="vh-100">
+            <div class="container-fluid">
+              <div class="row d-flex justify-content-center align-items-center">
+                <div class="col card border-primary mb-3">
+                  <div class="d-flex flex-rowalign-items-center justify-content-center justify-content-lg-start"> 
+                    <table id = "allReimbursements"  class="table">
+                      <caption>All Reimbursements</caption>
+                      <tr class = "d-flex">
+                        <th class="col-1">Reimbursement number</th>
+                        <th class="col-1">Amount Requested</th>
+                        <th class="col-1">Time Submitted</th>
+                        <th class="col-1">Time Resolved, if resolved</th>
+                        <th class="col-2">Description</th>
+                        <th class="col-2">Author's ID code</th>
+                        <th class="col-2">Resolver's ID code</th>
+                        <th class="col-1">Status</th>
+                        <th class="col-1">Type</th>
+                      </tr>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          
+      </div>
+      
+  
+      <script src="https://bootswatch.com/_vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+      <script type="text/javascript" src="/afterLogin/adminPage.js"></script>
+</body>
+</html>
